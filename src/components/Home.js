@@ -2,8 +2,22 @@ import React from "react";
 
 const Home = () => {
     return (
-        <div>
-            <h1>Home Page</h1>
+        <div className="home-container">
+            <h1>Chartreuse</h1>
+            <div className="home-banner"></div>
+            <div className="general-info">
+                <h4>What is Chartreuse</h4>
+                <p>
+                    Chartreuse is a unique and well-known liqueur that has a
+                    rich history dating back to the 18th century. The recipe for
+                    Chartreuse was originally created by a group of Carthusian
+                    monks in the French Alps. The recipe was said to have been
+                    passed down to the monks by a marshal of France, François
+                    Annibal d'Estrées, in the early 1700s. The recipe consisted
+                    of a secret blend of over 130 herbs, plants, and flowers,
+                    and it was said to have medicinal properties.
+                </p>
+            </div>
         </div>
     );
 };

@@ -1,10 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import chartreuseLogoTransparent from "./assets/charteuseLogoTransparent.png";
 
 const NavBar = () => {
+ const logo = chartreuseLogoTransparent;
+ console.log(logo)
     return (
         <div className="navbar">
-         <h3>Site Name</h3>
+            <img src={logo} alt="logo" width="50px"/>
             <ul>
                 <li>
                     <NavLink to="/">Home</NavLink>
