@@ -3,11 +3,11 @@
     padding: 0;
 }
 body {
-  width: 100%;
-  height: 100vh;
+    width: 100%;
+    height: 100vh;
 }
 #root {
-  height: 100%;
+    height: 100%;
 }
 /*👉NAVBAR👈*/
 
@@ -18,7 +18,9 @@ body {
     background-color: #e5ff2e;
     height: 10%;
     align-items: center;
-
+    position: fixed;
+    width: 100%;
+    z-index: 99;
 }
 .navbar > img {
     margin-left: 20px;
@@ -61,45 +63,113 @@ a:-webkit-any-link:hover {
     background-image: url(./components/assets/chartreuseBackground.jpeg);
     background-repeat: no-repeat;
     background-size: cover;
-    height: 90%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-   
 }
 .home-container > h1 {
-  text-align: center;
-  color: white;
-  text-shadow: 4px 4px 2px rgba(0,0,0,0.6);
-  font-size: 3rem;
-padding: 15px 0px;
+    text-align: center;
+    color: white;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.6);
+    font-size: 3rem;
+    padding: 15px 0px;
+    margin-top: 80px;
 }
 .home-banner {
     height: 160px;
     width: 100%;
     background-image: url(./components/assets/chartreuseBanner.jpeg);
     background-size: cover;
-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
-    
+    box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
 }
 .general-info {
-width: 80%;
-height: 300px;
-background-color: rgba(255, 255, 255, 0.7);
-margin-top: 40px;
-border-radius: 6px;
-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
--webkit-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
--moz-box-shadow: 0px 5px 16px 0px rgba(0,0,0,0.75);
-
+    width: 80%;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 40px;
+    border-radius: 6px;
+    box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
 }
 .general-info h4 {
-  text-align: center;
-  padding: 10px;
-
+    text-align: center;
+    padding: 10px;
 }
 .general-info p {
-  padding: 10px;
+    padding: 10px;
+}
+
+/*👉SHOP👈*/
+.shop-container {
+    background-color: rgba(128, 255, 0, 0.2);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.cart-sticky {
+    width: 100px;
+    border-radius: 6px;
+    
+    
+    position: fixed;
+    top: 80px;
+    right: 10px;
+    z-index: 199;
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.35);
+    -webkit-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.35);
+    -moz-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.35);
+}
+.cart-sticky > button {
+    background-color: chartreuse;
+    border-radius: 6px;
+}
+.product-card {
+    width: 80%;
+    background-color: rgba(255, 255, 255, 0.7);
+    margin-top: 110px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 16px 0px rgba(0, 0, 0, 0.75);
+    text-align: center;
+    min-height: 250px;
+    position: relative;
+}
+.product-card > h3 {
+    padding: 6px;
+}
+.image-and-details {
+    display: flex;
+}
+.product-details {
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    text-align: left;
+    padding-left: 6px;
+}
+.product-info {
+    padding: 6px;
+}
+
+.shop-container > .product-card ~ .product-card {
+    margin: 30px;
+}
+.product-button-container {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+}
+.product-button-container > button {
+    margin-left: 6px;
+    background-color: chartreuse;
+    border-radius: 6px;
+    padding: 2px;
 }
