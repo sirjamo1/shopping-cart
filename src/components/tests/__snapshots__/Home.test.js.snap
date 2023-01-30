@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<DocumentFragment>
+  <div
+    class="home-container"
+  >
+    <h1
+      class="home-title"
+      data-testid="homeTitle"
+    >
+      Chartreuse
+    </h1>
+    <div
+      class="home-banner"
+    />
+    <div
+      class="general-info"
+    >
+      <h4>
+        What is Chartreuse
+      </h4>
+      <p>
+        Chartreuse is a unique and well-known liqueur that has a rich history dating back to the 18th century. The recipe for Chartreuse was originally created by a group of Carthusian monks in the French Alps. The recipe was said to have been passed down to the monks by a marshal of France, François Annibal d'Estrées, in the early 1700s. The recipe consisted of a secret blend of over 130 herbs, plants, and flowers, and it was said to have medicinal properties.
+      </p>
+    </div>
+  </div>
+</DocumentFragment>
+`;

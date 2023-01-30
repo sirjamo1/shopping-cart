@@ -6,7 +6,7 @@ const Checkout = ({
     checkoutDecrement,
     checkoutIncrement,
     onCartClick,
-    handleDelete
+    handleDelete,
 }) => {
     const [grandTotal, setGrandTotal] = useState(0);
     useEffect(() => {
@@ -22,62 +22,80 @@ const Checkout = ({
     }, [cartItems, items]);
 
     return (
-        <div className="checkout-container">
+        <div data-testid="checkout-component" className="checkout-container">
             <h2>Checkout</h2>
             <div className="checkout-card-container">
-                {cartItems.items.map((item) => {
-                    for (let i = 0; i < items.length; i += 1) {
-                        if (item.id === items[i].id) {
-                            return (
-                                <div key={item.id} className="checkout-card">
-                                    <h4>{items[i].name}</h4>
-                                    <img
-                                        src={items[i].image}
-                                        width="100px"
-                                        alt={items[i].name}
-                                    />
-                                    <button
-                                        onClick={() => {
-                                            handleDelete(item.id);
-                                        }}
-                                        className="checkout-delete-button"
+                {cartItems.items.length > 0 ? (
+                    cartItems.items.map((item, i) => {
+                        for (let j = 0; j < items.length; j += 1) {
+                            if (item.id === items[j].id) {
+                                return (
+                                    <div
+                                        key={item.id}
+                                        className="checkout-card"
                                     >
-                                        X
-                                    </button>
-                                    <div className="product-input">
+                                        <h4>{items[j].name}</h4>
+                                        <img
+                                            src={items[j].image}
+                                            width="100px"
+                                            alt={items[j].name}
+                                        />
                                         <button
-                                            className="minus-button"
-                                            onClick={() =>
-                                                checkoutDecrement(item.id)
-                                            }
+                                            data-testid={`checkout-delete-button-${i}`}
+                                            onClick={() => {
+                                                handleDelete(item.id);
+                                            }}
+                                            className="checkout-delete-button"
                                         >
-                                            -
+                                            X
                                         </button>
-                                        <p>{item.count}</p>
-                                        <button
-                                            className="plus-button"
-                                            onClick={() =>
-                                                checkoutIncrement(item.id)
-                                            }
-                                        >
-                                            +
-                                        </button>
-                                        <p>
-                                            $
-                                            {(
-                                                items[i].price * item.count
-                                            ).toFixed(2)}
-                                        </p>
+                                        <div className="product-input">
+                                            <button
+                                                data-testid={`checkout-decrement-button-${i}`}
+                                                className="minus-button"
+                                                onClick={() =>
+                                                    checkoutDecrement(item.id)
+                                                }
+                                            >
+                                                -
+                                            </button>
+                                            <p
+                                                data-testid={`checkout-item-count-${i}`}
+                                            >
+                                                {item.count}
+                                            </p>
+                                            <button
+                                                data-testid={`checkout-increment-button-${i}`}
+                                                className="plus-button"
+                                                onClick={() =>
+                                                    checkoutIncrement(item.id)
+                                                }
+                                            >
+                                                +
+                                            </button>
+                                            <p
+                                                data-testid={`checkout-item-count-total-${i}`}
+                                            >
+                                                $
+                                                {(
+                                                    items[j].price * item.count
+                                                ).toFixed(2)}
+                                            </p>
+                                        </div>
                                     </div>
-                                </div>
-                            );
+                                );
+                            }
                         }
-                    }
-                })}
+                    })
+                ) : (
+                    <div>
+                        <p data-testid="nothing-in-cart">Nothing in cart...</p>
+                    </div>
+                )}
             </div>
             <div className="checkout-total-container">
                 <p>Total items : {cartItems.totalCount}</p>
-                <p>Total : ${grandTotal}</p>
+                <p data-testid="checkout-grand-total">Total : ${grandTotal}</p>
                 <button onClick={() => onCartClick()}>Continue Shopping</button>
                 <button>Checkout</button>
             </div>

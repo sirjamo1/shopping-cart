@@ -4,7 +4,6 @@ import greenChartreuseBottleVEP from "./assets/greenChartreuseBottleVEP.png";
 import yellowChartreuseBottle from "./assets/yellowChartreuseBottle.png";
 import yellowChartreuseBottleVEP from "./assets/yellowChartreuseBottleVEP.png";
 import Checkout from "./Checkout";
-//import chartreuseLogoTransparent from "./assets/chartreuseLogoTransparent.png";
 
 const Shop = () => {
     const yellowChartreuseImage = yellowChartreuseBottle;
@@ -64,11 +63,7 @@ const Shop = () => {
     const [checkoutOpen, setCheckoutOpen] = useState(false);
     const [cartItems, setCartItems] = useState({
         totalCount: 0,
-        items: [
-            // { id: 1, count: 0 },
-            // { id: 2, count: 0 },
-            // { id: 3, count: 0 },
-            // { id: 4, count: 0 },
+        items: [ 
         ],
     });
     const onCartClick = () => {
@@ -123,7 +118,7 @@ const Shop = () => {
         let cartItemsCopy = { ...cartItems };
         for (let i = 0; i < items.length; i += 1) {
             if (items[i].id === id) {
-                cartItemsCopy.totalCount  += items[i].count;
+                cartItemsCopy.totalCount += items[i].count;
                 for (let j = 0; j < cartItems.items.length; j += 1) {
                     if (cartItems.items[j].id === id) {
                         cartItems.items[j].count += items[i].count;
@@ -168,7 +163,9 @@ const Shop = () => {
             {!checkoutOpen ? (
                 <div className="cart-sticky">
                     <p>items : {cartItems.totalCount}</p>
-                    <button onClick={onCartClick}>Go to cart</button>
+                    <button data-testid="cart-button" onClick={onCartClick}>
+                        Go to cart
+                    </button>
                 </div>
             ) : (
                 <Checkout
@@ -180,8 +177,12 @@ const Shop = () => {
                     handleDelete={handleDelete}
                 />
             )}
-            {items.map((item) => (
-                <div className="product-card" key={item.id}>
+            {items.map((item, i) => (
+                <div
+                    className="product-card"
+                    key={item.id}
+                    data-testid={`product-card-${i}`}
+                >
                     <h3>{item.name}</h3>
 
                     <div className="image-and-details">
@@ -199,14 +200,16 @@ const Shop = () => {
                     <div className="product-input-container">
                         <div className="product-input">
                             <button
+                                data-testid={`decrement-button-${i}`}
                                 className="minus-button"
                                 onClick={() => decrement(item.id)}
                                 disabled={checkoutOpen}
                             >
                                 -
                             </button>
-                            <p>{item.count}</p>
+                            <p data-testid={`item-count-${i}`}>{item.count}</p>
                             <button
+                                data-testid={`increment-button-${i}`}
                                 className="plus-button"
                                 onClick={() => increment(item.id)}
                                 disabled={checkoutOpen}
@@ -216,6 +219,7 @@ const Shop = () => {
                         </div>
                         <div>
                             <button
+                                data-testid={`add-to-cart-button-${i}`}
                                 className="add-to-cart-button"
                                 onClick={() => addItemsToCart(item)}
                                 disabled={checkoutOpen}

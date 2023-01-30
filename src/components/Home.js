@@ -1,9 +1,10 @@
 import React from "react";
 
 const Home = () => {
+    const text = "Chartreuse";
     return (
         <div className="home-container">
-            <h1>Chartreuse</h1>
+            <h1 className="home-title" data-testid="homeTitle">{text}</h1>
             <div className="home-banner"></div>
             <div className="general-info">
                 <h4>What is Chartreuse</h4>
