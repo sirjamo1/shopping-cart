@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.26b6e1f8.css",
-    "main.js": "/static/js/main.58b7209a.js",
-    "static/media/chartreuseBackground.jpeg": "/static/media/chartreuseBackground.d240a5d98c8b922b5224.jpeg",
-    "static/media/chartreuseBanner.jpeg": "/static/media/chartreuseBanner.121e470310083082c854.jpeg",
-    "static/media/chartreuseLogoTransparent.png": "/static/media/chartreuseLogoTransparent.eecbcad8f491e538fa32.png",
-    "static/media/greenChartreuseBottle.png": "/static/media/greenChartreuseBottle.cb50b82b97c8c894e052.png",
-    "static/media/yellowChartreuseBottle.png": "/static/media/yellowChartreuseBottle.3d408aff5816f83cd621.png",
-    "static/media/yellowChartreuseBottleVEP.png": "/static/media/yellowChartreuseBottleVEP.2d21c0a883f041b531b6.png",
-    "static/media/greenChartreuseBottleVEP.png": "/static/media/greenChartreuseBottleVEP.cc5377fb18de6fbba3d5.png",
-    "index.html": "/index.html",
-    "main.26b6e1f8.css.map": "/static/css/main.26b6e1f8.css.map",
-    "main.58b7209a.js.map": "/static/js/main.58b7209a.js.map"
+    "main.css": "/shopping-cart/static/css/main.46e33c4a.css",
+    "main.js": "/shopping-cart/static/js/main.bb467aac.js",
+    "static/media/chartreuseBackground.jpeg": "/shopping-cart/static/media/chartreuseBackground.d240a5d98c8b922b5224.jpeg",
+    "static/media/chartreuseBanner.jpeg": "/shopping-cart/static/media/chartreuseBanner.121e470310083082c854.jpeg",
+    "static/media/chartreuseLogoTransparent.png": "/shopping-cart/static/media/chartreuseLogoTransparent.eecbcad8f491e538fa32.png",
+    "static/media/greenChartreuseBottle.png": "/shopping-cart/static/media/greenChartreuseBottle.cb50b82b97c8c894e052.png",
+    "static/media/yellowChartreuseBottle.png": "/shopping-cart/static/media/yellowChartreuseBottle.3d408aff5816f83cd621.png",
+    "static/media/yellowChartreuseBottleVEP.png": "/shopping-cart/static/media/yellowChartreuseBottleVEP.2d21c0a883f041b531b6.png",
+    "static/media/greenChartreuseBottleVEP.png": "/shopping-cart/static/media/greenChartreuseBottleVEP.cc5377fb18de6fbba3d5.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.46e33c4a.css.map": "/shopping-cart/static/css/main.46e33c4a.css.map",
+    "main.bb467aac.js.map": "/shopping-cart/static/js/main.bb467aac.js.map"
   },
   "entrypoints": [
-    "static/css/main.26b6e1f8.css",
-    "static/js/main.58b7209a.js"
+    "static/css/main.46e33c4a.css",
+    "static/js/main.bb467aac.js"
   ]
 }
