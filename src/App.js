@@ -6,11 +6,11 @@ import "./App.css";
 
 function App() {
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<Home />}></Route>
-                <Route exact path="/shop" element={<Shop />}></Route>
+                <Route path="/shop" element={<Shop />}></Route>
             </Routes>
         </BrowserRouter>
     );

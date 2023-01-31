@@ -21,6 +21,14 @@ const Checkout = ({
         setGrandTotal(total.toFixed(2));
     }, [cartItems, items]);
 
+    const handleCheckout = () => {
+        cartItems.items.forEach((item) => {
+            handleDelete(item.id);
+        });
+        alert("Thanks for shopping");
+        onCartClick();
+    };
+
     return (
         <div data-testid="checkout-component" className="checkout-container">
             <h2>Checkout</h2>
@@ -97,7 +105,7 @@ const Checkout = ({
                 <p>Total items : {cartItems.totalCount}</p>
                 <p data-testid="checkout-grand-total">Total : ${grandTotal}</p>
                 <button onClick={() => onCartClick()}>Continue Shopping</button>
-                <button>Checkout</button>
+                <button onClick={() => handleCheckout()}>Checkout</button>
             </div>
         </div>
     );
