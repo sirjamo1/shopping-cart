@@ -6,7 +6,7 @@ import "./App.css";
 
 function App() {
     return (
-        <BrowserRouter basename="/checkout-app">
+        <BrowserRouter basename="/">
             <NavBar />
             <Routes>
                 <Route exact path="/" element={<Home />}></Route>
